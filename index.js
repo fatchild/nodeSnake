@@ -1,17 +1,12 @@
-//Load HTTP module
-const http = require("http");
-const hostname = '127.0.0.1';
 const port = process.env.PORT || 3000;
 
 const express = require('express');
-const path = require('path');
-
-const app = express();
+const path    = require('path');
+const app     = express();
 
 app.use(express.static(__dirname + '/'));
 
-app.get('/', function(req, res) {
-    console.log(__dirname)
+app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '/game.html'));
 });
 
