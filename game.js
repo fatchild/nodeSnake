@@ -1,7 +1,8 @@
 // Game timing
 let lastRenderTime = 0;
-const SNAKE_SPEED = 8; // Per second
+let SNAKE_SPEED = 8; // Per second
 let collision = false
+let directionChosen = false
 
 // Game elements
 const game = document.getElementById('game');
@@ -9,6 +10,11 @@ const snake = document.getElementById('snake');
 const food = document.getElementById('food');
 const score = document.getElementById('score')
 const gameFrame = document.getElementById('game-frame')
+const speedInput = document.getElementById('speedInput')
+
+speedInput.addEventListener('input', function () {
+    SNAKE_SPEED = speedInput.value;
+}, false);
 
 // Set initial position of snake and track
 let snakePosRow;
@@ -115,6 +121,7 @@ function checkForCollision(){
         if (index !== 0 && snakePosRow === value[0] && snakePosColumn === value[1] && !document.getElementById('game-over')){
             console.log("GAME OVER")
             const gameOver = document.createElement("div");
+            console.log(gameOver)
 
             gameOver.classList.add('game-over', 'display-1');
             gameOver.setAttribute('id','game-over');
@@ -190,8 +197,9 @@ document.addEventListener('keydown', (e) => {
         else if (lastPressedDirection === "ArrowUp" && e.code === "ArrowDown"){
             return
         } 
-        else {
+        else if (!directionChosen) {
             lastPressedDirection = e.code;
+            directionChosen = true
         }
         // console.log(e.code, "e.code")
     }
@@ -220,7 +228,6 @@ function moveSnake(moveSnake) {
     }
 }
 
-
 // Game loop
 function main(currentTime) {
     window.requestAnimationFrame(main)
@@ -229,6 +236,7 @@ function main(currentTime) {
     if (secondsSinceLastRender < ( 1 / SNAKE_SPEED ) || collision) return false
 
     moveSnake(lastPressedDirection);
+    directionChosen = false
 
     checkForCollision()
 
