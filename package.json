@@ -1,0 +1,26 @@
+{
+  "name": "nodesnake",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fatchild/nodeSnake.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fatchild/nodeSnake/issues"
+  },
+  "homepage": "https://github.com/fatchild/nodeSnake#readme",
+  "dependencies": {
+    "express": "^4.17.2"
+  },
+  "devDependencies": {
+    "eslint": "^8.5.0",
+    "nodemon": "^2.0.15"
+  }
+}

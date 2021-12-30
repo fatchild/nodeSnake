@@ -1,0 +1,42 @@
+<!DOCTYPE html> <!--HTML5 DOCTYPE-->
+<html lang="en">
+  <head>
+    <title>Snake</title>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!--viewport for mobile first design-->
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐍</text></svg>" />
+
+    <link rel="stylesheet" type="text/css" href="./game.css" />
+    <script src="./game.js" defer type="module"></script>
+
+    <!-- INCLUDE Bootstrap 4 from a CDN-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+
+    <!-- .container-fluid provides a full width container spanning the whole viewport. -->
+    <!-- Is always a specific width and fluid to the size of the viewport -->
+    <div class="container-fluid">
+      <div class="d-flex justify-content-center">
+        <h1 class="display-3">Snake</h1>
+      </div>
+      <div class="jumbotron pt-3">
+        <div class="d-flex justify-content-center">
+          <p><b>Score: </b><span id="score"></span></p>
+        </div>
+        <div class="d-flex justify-content-center" id="game-frame">
+          <div class="game-grid" id="game">
+            <div class="snake" id="snake"></div>
+            <div class="food" id="food"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>
